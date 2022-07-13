@@ -7,9 +7,7 @@ import (
 
 const BaseURL = "https://nextpay.org/nx/gateway"
 
-type NextPay struct {
-	apiKey string
-}
+type NextPay struct{ apiKey string }
 
 func New(apiKey string) *NextPay {
 	return &NextPay{apiKey}
@@ -92,5 +90,22 @@ func (next *NextPay) Refund(transactionID string, amount int) (*VerifyResp, erro
 	return resp, findErrorByCode(resp.Code, -90)
 }
 
-// ToDo
-// func (next *NextPay) Checkout(wid, amount int, auth string, sheba, name string)
+func (next *NextPay) Checkout(wid, amount int, auth string, sheba, name string, withoutFee bool) (*CheckoutResp, error) {
+	endpoint := "/checkout"
+	if withoutFee {
+		endpoint = "/checkout_withoutfee"
+	}
+
+	resp, err := post[CheckoutResp](endpoint, Map{
+		"wid":    strconv.Itoa(wid),
+		"auth":   auth,
+		"amount": strconv.Itoa(amount),
+		"sheba":  sheba,
+		"name":   name,
+	})
+	if err != nil {
+		return nil, err
+	}
+
+	return resp, findErrorByCode(resp.Code, 200)
+}

@@ -19,12 +19,12 @@ func formURLEncodedPayload(data Map) io.Reader {
 }
 
 func post[T any](endpoint string, data Map) (*T, error) {
-	resp, err := http.Post(BaseURL, "application/x-www-form-urlencoded", formURLEncodedPayload(data))
+	resp, err := http.Post(BaseURL+endpoint, "application/x-www-form-urlencoded", formURLEncodedPayload(data))
 	if err != nil {
 		return nil, err
 	}
 	defer resp.Body.Close()
 
 	var respData T
-	return &respData, json.NewDecoder(resp.Body).Decode(respData)
+	return &respData, json.NewDecoder(resp.Body).Decode(&respData)
 }

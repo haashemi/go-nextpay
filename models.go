@@ -1,5 +1,14 @@
 package nextpay
 
+type CreateTokenResp struct {
+	Code          int    `json:"code"`
+	TransactionID string `json:"trans_id"`
+}
+
+func (d *CreateTokenResp) PaymentURL() string {
+	return BaseURL + "/payment/" + d.TransactionID
+}
+
 type VerifyResp struct {
 	Code          int    `json:"code"`
 	Amount        int    `json:"amount"`
@@ -10,13 +19,9 @@ type VerifyResp struct {
 	CustomField   Map    `json:"custom"`
 }
 
-type CreateTokenResp struct {
-	Code          int    `json:"code"`
-	TransactionID string `json:"trans_id"`
-}
-
-func (d *CreateTokenResp) PaymentURL() string {
-	return BaseURL + "/payment/" + d.TransactionID
+type CheckoutResp struct {
+	Code    int    `json:"code"`
+	Message string `json:"message"`
 }
 
 type CallbackData struct {
