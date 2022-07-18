@@ -1,6 +1,6 @@
 # Go [NextPay](https://nextpay.org/) API Wrapper
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/MR-AliHaashemi/go-nextpay)](https://goreportcard.com/report/github.com/MR-AliHaashemi/go-nextpay)
+[![Go Report Card](https://goreportcard.com/badge/github.com/MR-AliHaashemi/go-nextpay)](https://goreportcard.com/report/github.com/MR-AliHaashemi/go-nextpay) [![Go Reference](https://pkg.go.dev/badge/github.com/MR-AliHaashemi/go-nextpay.svg)](https://pkg.go.dev/github.com/MR-AliHaashemi/go-nextpay)
 
 
 ### Installation
