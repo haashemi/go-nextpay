@@ -1,3 +1,3 @@
-module github.com/MR-AliHaashemi/go-nextpay
+module github.com/haashemi/go-nextpay
 
 go 1.18

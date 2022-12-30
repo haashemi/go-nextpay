@@ -1,11 +1,11 @@
 # Go [NextPay](https://nextpay.org/) API Wrapper
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/MR-AliHaashemi/go-nextpay)](https://goreportcard.com/report/github.com/MR-AliHaashemi/go-nextpay) [![Go Reference](https://pkg.go.dev/badge/github.com/MR-AliHaashemi/go-nextpay.svg)](https://pkg.go.dev/github.com/MR-AliHaashemi/go-nextpay)
+[![Go Report Card](https://goreportcard.com/badge/github.com/haashemi/go-nextpay)](https://goreportcard.com/report/github.com/haashemi/go-nextpay) [![Go Reference](https://pkg.go.dev/badge/github.com/haashemi/go-nextpay.svg)](https://pkg.go.dev/github.com/haashemi/go-nextpay)
 
 
 ### Installation
 ```
-go get github.com/MR-AliHaashemi/go-nextpay
+go get github.com/haashemi/go-nextpay
 ```
 
 ------
@@ -18,7 +18,7 @@ package main
 
 import (
  ...
-	"github.com/MR-AliHaashemi/go-nextpay"
+	"github.com/haashemi/go-nextpay"
 )
 
 func main() {
